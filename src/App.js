@@ -2,23 +2,15 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-function App() {
+const App = () => {
+  const APP_ID = "02593889";
+  const APP_KEY = "f1a27600b3af976b81545aa415a13ff1	";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Kev's Recipe App</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Kev's React Recipes</h1>
     </div>
   );
-}
+};
 
 export default App;
