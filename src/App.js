@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import Recipe from "./Recipe";
 import "./App.css";
 
 const App = () => {
@@ -7,6 +7,7 @@ const App = () => {
   const APP_KEY = "f1a27600b3af976b81545aa415a13ff1	";
 
   const [recipes, setRecipes] = useState([]);
+  const [searc, setSearch] = useState("");
 
   useEffect(() => {
     getRecipes();
@@ -18,17 +19,26 @@ const App = () => {
     );
     const data = await response.json();
     setRecipes(data.hits);
+    console.log(data.hits);
   };
 
   return (
     <div className="App">
       <form className="search-form">
-        <input className="search-bar" type="text" />
+        <input className="search-bar" type="text" value={search} />
         <button className="search-button" type="submit">
           {" "}
           Search
         </button>
       </form>
+      {recipes.map((recipe) => (
+        <Recipe
+          key={recipe.recipe.label}
+          title={recipe.recipe.label}
+          calories={recipe.recipe.calories}
+          image={recipe.recipe.image}
+        />
+      ))}
     </div>
   );
 };
