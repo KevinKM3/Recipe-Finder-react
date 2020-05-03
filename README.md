@@ -1,3 +1,5 @@
+React Recipe Finder App fetching data from the Edaman API. Used CSS modules to style.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
